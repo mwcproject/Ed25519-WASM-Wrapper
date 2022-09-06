@@ -7,8 +7,8 @@
 #define crypto_sign_PUBLICKEYBYTES CRYPTO_PUBLICKEYBYTES
 #define crypto_sign_BYTES CRYPTO_BYTES
 
-extern int crypto_sign(unsigned char *,unsigned long long *,const unsigned char *,unsigned long long,const unsigned char *);
-extern int crypto_sign_open(unsigned char *,unsigned long long *,const unsigned char *,unsigned long long,const unsigned char *);
-extern int crypto_sign_keypair(unsigned char *,unsigned char *);
+extern int crypto_sign(unsigned char *, unsigned long long *, const unsigned char *, unsigned long long, const unsigned char *);
+extern int crypto_sign_open(unsigned char *, unsigned long long *, const unsigned char *, unsigned long long, const unsigned char *);
+extern int crypto_sign_keypair(unsigned char *, unsigned char *);
 
 #endif

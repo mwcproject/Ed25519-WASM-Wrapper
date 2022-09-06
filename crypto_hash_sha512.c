@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "crypto_hash_sha512.h"
+#include "./crypto_hash_sha512.h"
 
 typedef uint64_t uint64;
 
@@ -256,7 +256,7 @@ int crypto_hash_sha512(unsigned char *out,const unsigned char *in,unsigned long 
 {
   unsigned char h[64];
   unsigned char padded[256];
-  int i;
+  unsigned long long int i;
   unsigned long long bytes = inlen;
 
   for (i = 0;i < 64;++i) h[i] = iv[i];

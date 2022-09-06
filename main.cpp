@@ -2,7 +2,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
-#include "crypto_sign.h"
+#include "./crypto_sign.h"
 
 // Check if using Emscripten
 #ifdef __EMSCRIPTEN__
@@ -124,7 +124,7 @@ bool sign(uint8_t *signature, const uint8_t *message, size_t messageSize, const 
 	
 	// Check if signing the message failed
 	uint8_t fullSignature[crypto_sign_BYTES + messageSize];
-	uint64_t signatureLength;
+	long long unsigned int signatureLength;
 	
 	if(crypto_sign(fullSignature, &signatureLength, message, messageSize, fullSecretKey)) {
 	
@@ -169,7 +169,7 @@ bool verify(const uint8_t *message, size_t messageSize, const uint8_t *signature
 	
 	// Check if verifying the message failed
 	uint8_t verifiedMessage[messageSize];
-	uint64_t verifiedMessageLength;
+	long long unsigned int verifiedMessageLength;
 	
 	if(crypto_sign_open(verifiedMessage, &verifiedMessageLength, fullSignature, sizeof(fullSignature), publicKey)) {
 	
