@@ -2,13 +2,21 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
-#include "./crypto_sign.h"
 
 // Check if using Emscripten
 #ifdef __EMSCRIPTEN__
 
 	// Header files
 	#include <emscripten.h>
+	#include "./crypto_sign.h"
+
+// Otherwise
+#else
+
+	// Header files
+	extern "C" {
+		#include "./crypto_sign.h"
+	}
 #endif
 
 using namespace std;
