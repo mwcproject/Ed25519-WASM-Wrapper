@@ -1,29 +1,54 @@
 // Header files
-#include <emscripten.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
 #include "crypto_sign.h"
 
+// Check if using Emscripten
+#ifdef __EMSCRIPTEN__
+
+	// Header files
+	#include <emscripten.h>
+#endif
+
 using namespace std;
+
+
+// Definitions
+
+// Check if using Emscripten
+#ifdef __EMSCRIPTEN__
+
+	// Export
+	#define EXPORT extern "C"
+
+// Otherwise
+#else
+
+	// Export
+	#define EXPORT
+
+	// Emscripten keepalive
+	#define EMSCRIPTEN_KEEPALIVE
+#endif
 
 
 // Function prototypes
 
 // Public key size
-extern "C" size_t EMSCRIPTEN_KEEPALIVE publicKeySize();
+EXPORT size_t EMSCRIPTEN_KEEPALIVE publicKeySize();
 
 // Public key from secret key
-extern "C" bool EMSCRIPTEN_KEEPALIVE publicKeyFromSecretKey(uint8_t *publicKey, const uint8_t *secretKey, size_t secretKeySize);
+EXPORT bool EMSCRIPTEN_KEEPALIVE publicKeyFromSecretKey(uint8_t *publicKey, const uint8_t *secretKey, size_t secretKeySize);
 
 // Signature size
-extern "C" size_t EMSCRIPTEN_KEEPALIVE signatureSize();
+EXPORT size_t EMSCRIPTEN_KEEPALIVE signatureSize();
 
 // Sign
-extern "C" bool EMSCRIPTEN_KEEPALIVE sign(uint8_t *signature, const uint8_t *message, size_t messageSize, const uint8_t *secretKey, size_t secretKeySize);
+EXPORT bool EMSCRIPTEN_KEEPALIVE sign(uint8_t *signature, const uint8_t *message, size_t messageSize, const uint8_t *secretKey, size_t secretKeySize);
 
 // Verify
-extern "C" bool EMSCRIPTEN_KEEPALIVE verify(const uint8_t *message, size_t messageSize, const uint8_t *signature, size_t signatureSize, const uint8_t *publicKey, size_t publicKeySize);
+EXPORT bool EMSCRIPTEN_KEEPALIVE verify(const uint8_t *message, size_t messageSize, const uint8_t *signature, size_t signatureSize, const uint8_t *publicKey, size_t publicKeySize);
 
 
 // Supporting function implementation
