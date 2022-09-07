@@ -1,6 +1,6 @@
 # Library parameters
 NAME = "Ed25519"
-VERSION = "0.0.7"
+VERSION = "0.0.8"
 CC = "em++"
 CFLAGS = -Wall -D NDEBUG -Oz -finput-charset=UTF-8 -fexec-charset=UTF-8 -funsigned-char -ffunction-sections -fdata-sections -D VERSION=$(VERSION) -I "./" -I "./supercop-20220213/crypto_sign/ed25519/ref10/" -s MODULARIZE=1 --memory-init-file=0 -s ABORTING_MALLOC=0 -s ALLOW_MEMORY_GROWTH=1 --closure 1 -flto -fno-rtti -fno-exceptions -s NO_FILESYSTEM=1 -s DISABLE_EXCEPTION_CATCHING=1 -s EXPORTED_FUNCTIONS="['_malloc', '_free']" -s EXPORT_NAME="ed25519" -D CRYPTO_NAMESPACE\(x\)=x
 LIBS =
