@@ -1,6 +1,6 @@
 {
 	"name": "@nicolasflamel/ed25519-wasm",
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"description": "WASM wrapper around parts of SUPERCOP's Ed25519 implementation",
 	"main": "dist/index.js",
 	"files": [
@@ -24,6 +24,6 @@
 	},
 	"optionalDependencies": {
 		"@nicolasflamel/ed25519-native": "^0.0.14",
-		"@nicolasflamel/ed25519-react": "^0.0.1"
+		"@nicolasflamel/ed25519-react": "^0.0.2"
 	}
 }
