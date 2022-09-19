@@ -1,6 +1,6 @@
 {
 	"name": "@nicolasflamel/ed25519-wasm",
-	"version": "0.0.20",
+	"version": "0.0.21",
 	"description": "WASM wrapper for parts of SUPERCOP's Ed25519 implementation",
 	"main": "./dist/index.js",
 	"files": [
