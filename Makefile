@@ -40,6 +40,6 @@ dependencies:
 	unxz < "./supercop-20220213.tar.xz" | tar -xf -
 	rm "./supercop-20220213.tar.xz"
 	sed -i 's/static const unsigned char zero\[32\];/static const unsigned char zero[32] = {0};/g' "./supercop-20220213/crypto_sign/ed25519/ref10/fe_isnonzero.c"
-	wget "https://github.com/NicolasFlamel1/Ed25519-NPM-Package/archive/master.zip"
+	wget "https://github.com/mwcproject/Ed25519-NPM-Package/archive/master.zip"
 	unzip "./master.zip"
 	rm "./master.zip"

@@ -1,5 +1,5 @@
 {
-	"name": "@nicolasflamel/ed25519-wasm",
+	"name": "@mwcproject/ed25519-wasm",
 	"version": "0.0.22",
 	"description": "WASM wrapper for parts of SUPERCOP's Ed25519 implementation",
 	"main": "./dist/index.js",
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NicolasFlamel1/Ed25519-WASM-Wrapper.git"
+		"url": "git+https://github.com/mwcproject/Ed25519-WASM-Wrapper.git"
 	},
 	"keywords": [
 		"Ed25519"
@@ -19,6 +19,6 @@
 	"author": "Nicolas Flamel",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/NicolasFlamel1/Ed25519-WASM-Wrapper/issues"
+		"url": "https://github.com/mwcproject/Ed25519-WASM-Wrapper/issues"
 	}
 }
